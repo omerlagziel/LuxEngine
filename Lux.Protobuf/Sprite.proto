@@ -1,0 +1,39 @@
+﻿syntax = "proto3";
+package Lux.Protobuf;
+
+
+message Sprite
+{
+    string TextureName = 1;
+    string DefaultAnimationName = 2;
+    map<string, Animation> Animations = 3;
+}
+
+message Animation
+{
+    repeated AnimationFrame Frames = 1;
+    int32 IndexStart = 2;
+    int32 IndexEnd = 3;
+}
+
+message AnimationFrame
+{
+    int32 Width = 1;
+    int32 Height = 2;
+    int32 TexturePositionX = 3;
+    int32 TexturePositionY = 4;
+    SpriteDepth SpriteDepth = 5;
+    int32 Duration = 6;
+}
+
+enum SpriteDepth
+{
+    Undefined = 0;
+    Min = 10;
+
+    OverCharacter = 30;
+    Character = 40;
+    BehindCharacter = 50;
+
+    Max = 90;
+}

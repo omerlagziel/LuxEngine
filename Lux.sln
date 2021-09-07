@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lux.Framework", "Lux.Framework\Lux.Framework.csproj", "{F033B2BE-7BAD-43FE-BFFC-88DB4A450151}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNA", "..\FNA\FNA.csproj", "{35253CE1-C864-4CD3-8249-4D1319748E8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lux.Benchmark", "Lux.Benchmark\Lux.Benchmark.csproj", "{2E25DA89-A917-47F3-9E44-66FE849A32F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lux.Tests", "Lux.Tests\Lux.Tests.csproj", "{45A22D1E-FF75-4185-A868-905407722617}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F033B2BE-7BAD-43FE-BFFC-88DB4A450151}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{F033B2BE-7BAD-43FE-BFFC-88DB4A450151}.Debug|anycpu.Build.0 = Debug|anycpu
+		{F033B2BE-7BAD-43FE-BFFC-88DB4A450151}.Release|anycpu.ActiveCfg = Release|anycpu
+		{F033B2BE-7BAD-43FE-BFFC-88DB4A450151}.Release|anycpu.Build.0 = Release|anycpu
+		{35253CE1-C864-4CD3-8249-4D1319748E8F}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{35253CE1-C864-4CD3-8249-4D1319748E8F}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{35253CE1-C864-4CD3-8249-4D1319748E8F}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{35253CE1-C864-4CD3-8249-4D1319748E8F}.Release|anycpu.Build.0 = Release|Any CPU
+		{2E25DA89-A917-47F3-9E44-66FE849A32F6}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{2E25DA89-A917-47F3-9E44-66FE849A32F6}.Debug|anycpu.Build.0 = Debug|anycpu
+		{2E25DA89-A917-47F3-9E44-66FE849A32F6}.Release|anycpu.ActiveCfg = Release|anycpu
+		{2E25DA89-A917-47F3-9E44-66FE849A32F6}.Release|anycpu.Build.0 = Release|anycpu
+		{45A22D1E-FF75-4185-A868-905407722617}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{45A22D1E-FF75-4185-A868-905407722617}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{45A22D1E-FF75-4185-A868-905407722617}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{45A22D1E-FF75-4185-A868-905407722617}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

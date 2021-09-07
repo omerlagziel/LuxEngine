@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+package Lux.Protobuf;
+
+import "Sprite.proto";
+
+message Tileset
+{
+    map<int32, string> tileIdToSpriteName = 1;
+}

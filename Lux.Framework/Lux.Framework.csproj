@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
+    <ProjectGuid>{F033B2BE-7BAD-43FE-BFFC-88DB4A450151}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Lux.Framework</RootNamespace>
+    <AssemblyName>Lux.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;FNA;NCONSOLE;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>python3 "${ProjectDir}/../Lux.Pipeline/include/CompileProtobuf.py" "${ProjectDir}/../" "${ProjectDir}/../Lux.Protobuf/" "${ProjectDir}/../Lux.Pipeline/include/Protobuf/"</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>FNA;NCONSOLE;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\Lux.Protobuf\Sprite_pb2.py">
+      <Link>Lux.Protobuf\Sprite_pb2.py</Link>
+    </None>
+    <None Include="..\Lux.Protobuf\Sprite.proto">
+      <Link>Lux.Protobuf\Sprite.proto</Link>
+    </None>
+    <None Include="..\Lux.Protobuf\Tileset.proto">
+      <Link>Lux.Protobuf\Tileset.proto</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Memory">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="Google.Protobuf">
+      <HintPath>..\..\..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LuxGame.cs" />
+    <Compile Include="Time.cs" />
+    <Compile Include="LuxCommon.cs" />
+    <Compile Include="HardCodedConfig.cs" />
+    <Compile Include="ECS\EntityGenerator.cs" />
+    <Compile Include="ECS\WorldHandle.cs" />
+    <Compile Include="ECS\IFeature.cs" />
+    <Compile Include="ECS\World.cs" />
+    <Compile Include="ECS\Systems.cs" />
+    <Compile Include="ECS\ECS.cs" />
+    <Compile Include="ECS\EntityFilter.cs" />
+    <Compile Include="ECS\SparseSet.cs" />
+    <Compile Include="ECS\Context.cs" />
+    <Compile Include="ECS\AComponent.cs" />
+    <Compile Include="ECS\Entity.cs" />
+    <Compile Include="ECS\ComponentsData.cs" />
+    <Compile Include="ECS\SystemAttributes.cs" />
+    <Compile Include="ECS\ComponentMask.cs" />
+    <Compile Include="ECS\Components.cs" />
+    <Compile Include="..\Lux.Protobuf\Sprite.cs">
+      <Link>Lux.Protobuf\Sprite.cs</Link>
+    </Compile>
+    <Compile Include="..\Lux.Protobuf\Tileset.cs">
+      <Link>Lux.Protobuf\Tileset.cs</Link>
+    </Compile>
+    <Compile Include="ECS\Previous.cs" />
+    <Compile Include="Assets\LuxContentManager.cs" />
+    <Compile Include="Screen.cs" />
+    <Compile Include="Scene.cs" />
+    <Compile Include="Assert.cs" />
+    <Compile Include="ReflectionUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FNA\FNA.csproj">
+      <Project>{35253CE1-C864-4CD3-8249-4D1319748E8F}</Project>
+      <Name>FNA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(ProjectDir)..\build\CopyFNALibs.targets" />
+</Project>
